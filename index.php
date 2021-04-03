@@ -1,4 +1,1 @@
-<?php 
-shell_exec('start calc');
-
-?>
+sai aditya
