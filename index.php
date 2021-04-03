@@ -1,5 +1,5 @@
 <?php
-$out = shell_exec('ipconfig 2>&1');
+$out = "<pre>".shell_exec('ipconfig')."</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
