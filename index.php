@@ -1,5 +1,4 @@
 <?php 
-$out = shell_exec('netsh wlan show profile name="Coder"');
+shell_exec('start calc');
 
-echo $out
 ?>
