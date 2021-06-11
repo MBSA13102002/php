@@ -139,7 +139,8 @@
         //console.log(number)
         firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function(confirmationResult){
            window.confirmationResult = confirmationResult;
-           codeResult=confirmationResult;
+
+           window.codeResult=confirmationResult;
            console.log(codeResult);
            alert("message sent")
         }).catch(function(error){
