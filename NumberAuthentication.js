@@ -49,7 +49,7 @@ function send_data(){
         number:number
     });
     document.getElementById('send_otp').style.display="block";
-    document.getElementById('confirm_otp').style.display="user";
+    document.getElementById('confirm_otp').style.display="none";
     document.getElementById("name")='';
     document.getElementById("email")='';
     document.getElementById("number")='';
