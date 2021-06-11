@@ -48,5 +48,8 @@ function send_data(){
         email:email,
         number:number
     });
+    // document.getElementById("name")='';
+    // document.getElementById("email")='';
+    // ;
 
 };
