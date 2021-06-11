@@ -16,7 +16,7 @@ function phoneAuth() {
         window.confirmationResult=confirmationResult;
         coderesult=confirmationResult;
         console.log(coderesult);
-        document.getElementById(message).innerHTML="OTP SENT"
+        document.getElementById("message").innerHTML="OTP SENT"
         document.getElementById('send_otp').style.display="none";
         document.getElementById('confirm_otp').style.display="block";
         // alert("Message sent");
