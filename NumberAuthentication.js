@@ -41,19 +41,19 @@ function send_data(){
     
     var name=document.getElementById("name").value;
     var email=document.getElementById("email").value;
-    var number=localStorage.getItem('mob_no')
+    // var number=localStorage.getItem('mob_no')
     let formMessage=firebase.database().ref("FORM DATA");
     formMessage.push({
         name:name,
         email:email,
         number:number
     });
-    // document.getElementById('send_otp').style.display="block";
-    // document.getElementById('confirm_otp').style.display="none";
-    // document.getElementById("name").value="";
-    // document.getElementById("email").value="";
-    // document.getElementById("number").value="";
-    // document.getElementById("verificationCode").value="";
+    document.getElementById('send_otp').style.display="block";
+    document.getElementById('confirm_otp').style.display="none";
+    document.getElementById("name").value="";
+    document.getElementById("email").value="";
+    document.getElementById("number").value="";
+    document.getElementById("verificationCode").value="";
   
     ;
 
