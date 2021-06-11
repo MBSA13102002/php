@@ -15,7 +15,7 @@ function phoneAuth() {
         //s is in lowercase
         window.confirmationResult=confirmationResult;
         coderesult=confirmationResult;
-        console.log(coderesult);
+        // console.log(coderesult);
         document.getElementById("message").innerHTML="OTP SENT"
         document.getElementById('send_otp').style.display="none";
         document.getElementById('confirm_otp').style.display="block";
@@ -31,7 +31,7 @@ function codeverify() {
         // alert("Successfully registered");
         document.getElementById("message").innerHTML="OTP VERIFIED!!!!";
         var user=result.user;
-        console.log(user);
+        // console.log(user);
     }).catch(function (error) {
         document.getElementById("message").innerHTML=error.message;
         // alert(error.message);
@@ -42,6 +42,7 @@ function send_data(){
     var name=document.getElementById("name").value;
     var email=document.getElementById("email").value;
     var number=localStorage.getItem('mob_no')
+    let formMessage=firebase.database().ref("FORM DATA");
     formMessage.push({
         name:name,
         email:email,
