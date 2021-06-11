@@ -45,6 +45,7 @@ function send_data(){
     formMessage.push({
         name:name,
         email:email,
-        number:number});
+        number:number
+    });
 
 };
