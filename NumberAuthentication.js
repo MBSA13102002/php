@@ -48,8 +48,13 @@ function send_data(){
         email:email,
         number:number
     });
-    // document.getElementById("name")='';
-    // document.getElementById("email")='';
-    // ;
+    document.getElementById('send_otp').style.display="block";
+    document.getElementById('confirm_otp').style.display="user";
+    document.getElementById("name")='';
+    document.getElementById("email")='';
+    document.getElementById("number")='';
+    document.getElementById("verificationCode")='';
+  
+    ;
 
 };
