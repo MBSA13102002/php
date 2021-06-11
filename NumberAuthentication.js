@@ -50,10 +50,10 @@ function send_data(){
     });
     document.getElementById('send_otp').style.display="block";
     document.getElementById('confirm_otp').style.display="none";
-    document.getElementById("name")='';
-    document.getElementById("email")='';
-    document.getElementById("number")='';
-    document.getElementById("verificationCode")='';
+    document.getElementById("name")="";
+    document.getElementById("email")="";
+    document.getElementById("number")="";
+    document.getElementById("verificationCode")="";
   
     ;
 
