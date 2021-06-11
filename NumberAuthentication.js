@@ -54,6 +54,7 @@ function send_data(){
     document.getElementById("email").value="";
     document.getElementById("number").value="";
     document.getElementById("verificationCode").value="";
+    document.getElementById("message").innerHTML="";
     alert("FORM SUBMITTED SUCCESSFULLY")
   
     ;
