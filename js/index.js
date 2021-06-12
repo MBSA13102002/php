@@ -1,3 +1,4 @@
+confirmation = null;
 function Send_OTP(){
     var Name = document.getElementById("name").value
     var Email = document.getElementById('email').value
@@ -50,6 +51,7 @@ function  Confirm_OTP(){
     // detail = res[1].slice(10,res[1].length-1)
     if (stat=="Success"){
         alert("OTP CONFIRMED & VERIFIED!!!")
+        confirmation = true;
         // document.getElementById("confirm_otp").style.display="none";
     }
     else{
@@ -64,14 +66,21 @@ function submit(){
     var Email = document.getElementById('email').value
     var Number=document.getElementById('phone_number').value
     var Verification_Code=document.getElementById('verificationCode').value
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    if (confirmation!=null){
     if (Name!='' && Email != '' && Number!= '' && Verification_Code!='')
     {
         let formMessage=firebase.database().ref("FORM DATA");
         formMessage.push({
            Name:Name,
-           EmailId:Email,
+           Email:Email,
            Number:Number,
-           OTP:Verification_Code
+           OTP:Verification_Code,
+           date:today
         });
 
         alert("Form Submitted Successfully")
@@ -86,6 +95,10 @@ function submit(){
        alert("FIIL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
     //    location.reload()
    }
+}
+else{
+    alert("Please confirm the otp and check whether all details are filled or not")
+}
 }
 function scrollwin() {
     window.scrollTo(0, 750);
