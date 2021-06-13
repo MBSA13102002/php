@@ -47,9 +47,13 @@ function Confirm_OTP() {
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
+    var hour = today.getHours()
+    var min = today.getMinutes()
+    var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
+    time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice!="CHOOSE") {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice!="CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -67,13 +71,14 @@ function Confirm_OTP() {
                 Number: Number,
                 OTP: Verification_Code,
                 date: today,
+                time:time,
                 Choice: Choice
             });
             alert("OTP CONFIRMED & VERIFIED!!! AND FORM SUBMITTED SUCCESSFULLY!!!")
             document.getElementById("name").value = ''
             document.getElementById("email").value = ''
             document.getElementById("phone_number").value = ''
-            document.getElementById("type_flats").value = "CHOOSE"
+            document.getElementById("type_flats").value = "CHOOSE YOUR REQUIREMENT"
             document.getElementById("confirm_otp").style.display = "none";
             
             
