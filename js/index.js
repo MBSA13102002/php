@@ -1,3 +1,4 @@
+
 confirmation = null;
 function Send_OTP() {
     var Name = document.getElementById("name").value
@@ -6,8 +7,8 @@ function Send_OTP() {
     if (Name != "" && Email != "" && Number != "") {
 
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
-        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        // theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
@@ -55,8 +56,8 @@ function Confirm_OTP() {
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice!="CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
-        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        // theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText
@@ -74,7 +75,7 @@ function Confirm_OTP() {
                 time:time,
                 Choice: Choice
             });
-            alert("OTP CONFIRMED & VERIFIED!!! AND FORM SUBMITTED SUCCESSFULLY!!!")
+            alert("Our expert will get in touch with you shortly!!")
             document.getElementById("name").value = ''
             document.getElementById("email").value = ''
             document.getElementById("phone_number").value = ''
@@ -95,9 +96,33 @@ function Confirm_OTP() {
 
 
 
-
+    
 }
-
+function Splash(){
+    setTimeout(function(){  
+    document.getElementById("main_content").classList.add("main_imp");
+    document.getElementById("splash").style.display="block"; 
+    document.getElementById("splash").style.top=window.pageYOffset.toString()+'px'; 
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+  
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}, 3000);
+   
+}
+function removed_done() {
+   document.getElementById("main_content").classList.remove("main_imp");
+   document.getElementById("splash").style.display="none";
+   window.onscroll = function() {};
+}
+function sai(){
+    // var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+    var sai = window.pageYOffset
+    alert(sai)
+}
 // function submit() {
 //     var Name = document.getElementById("name").value
 //     var Email = document.getElementById('email').value
@@ -136,8 +161,4 @@ function Confirm_OTP() {
 //         alert("Please confirm the otp and check whether all details are filled or not")
 //     }
 // }
-function scrollwin() {
-    window.scrollTo(0, 750);
-    alert("Fill the Form to Contact our Experts")
-}
 
