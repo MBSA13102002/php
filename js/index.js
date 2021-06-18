@@ -1,14 +1,14 @@
 
-confirmation = null;
 function Send_OTP() {
-    var Name = document.getElementById("name").value
+    var Name = document.getElementById('name').value
     var Email = document.getElementById('email').value
     var Number = document.getElementById('phone_number').value
-    if (Name != "" && Email != "" && Number != "") {
+    var Choice = document.getElementById('type_flats').value
+    if (Name != "" && Email != "" && Number != "" && Choice!="CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
-        // theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
-        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
@@ -18,10 +18,12 @@ function Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            localStorage.setItem("phone_num", Number)
-            localStorage.setItem("Name", Name)
-            localStorage.setItem("Email", Email)
+            // localStorage.setItem("phone_num", Number)
+            // localStorage.setItem("Name", Name)
+            // localStorage.setItem("Email", Email)
+            alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
             document.getElementById('confirm_otp').style.display = "block";
+            document.getElementById('block_chain').style.display = "none";
             // document.getElementById('send_otp').style.display="none"; 
         }
         else {
@@ -56,8 +58,8 @@ function Confirm_OTP() {
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice!="CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        // theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
-        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText
@@ -91,13 +93,58 @@ function Confirm_OTP() {
         }
     }
     else {
-        alert("FIIL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
+        alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
     }
 
 
 
-    
+
 }
+
+// function submit() {
+//     var Name = document.getElementById("name").value
+//     var Email = document.getElementById('email').value
+//     var Number = document.getElementById('phone_number').value
+//     var Verification_Code = document.getElementById('verificationCode').value
+//     var today = new Date();
+//     var dd = String(today.getDate()).padStart(2, '0');
+//     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//     var yyyy = today.getFullYear();
+//     today = dd + '/' + mm + '/' + yyyy;
+//     if (confirmation != null) {
+//         if (Name != '' && Email != '' && Number != '' && Verification_Code != '') {
+//             let formMessage = firebase.database().ref("FORM DATA");
+//             formMessage.push({
+//                 Name: Name,
+//                 Email: Email,
+//                 Number: Number,
+//                 OTP: Verification_Code,
+//                 date: today
+//             });
+
+//             alert("Form Submitted Successfully")
+//             document.getElementById("name").value = ''
+//             document.getElementById("email").value = ''
+//             document.getElementById("phone_number").value = ''
+//             document.getElementById("confirm_otp").style.display = "none";
+
+
+//         }
+//         else {
+//             alert("FIIL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
+//             //    location.reload()
+//         }
+//     }
+//     else {
+//         alert("Please confirm the otp and check whether all details are filled or not")
+//     }
+// }
+// function scrollwin() {
+//     window.scrollTo(0, 750);
+//     alert("Fill the Form to Contact our Experts")
+// }
+
+
 function Splash(){
     setTimeout(function(){  
     document.getElementById("main_content").classList.add("main_imp");

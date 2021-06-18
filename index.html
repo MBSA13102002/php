@@ -4,7 +4,8 @@
 <head>
     <meta charset=utf-8>
     <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href=images/logo_tab.ico type=image/x-icon>
+    <link rel="shortcut icon" href="images/logo_tab.jpeg" type=image/x-icon>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel=stylesheet>
     <link href='https://fonts.googleapis.com/css?family=Yeseva One|Trispace|Alatsi|Actor' rel=stylesheet>
     <link rel=stylesheet href=css/bootstrap.min.css>
@@ -21,9 +22,10 @@
 </style>
 
 <body onload="Splash()">
+
     <center>
-        <div class="card container more_imp my-5" id="splash" style="width: 18rem;display:none">
-            
+        <div class="animate__animated animate__backInLeft card container more_imp my-5" id="splash" style="width: 18rem;display:none">
+
             <center>
                 <span type="button" id='close' style="position:relative;float:right" onclick="removed_done()">x</span>
                 <div class="row ">
@@ -31,17 +33,17 @@
                 </div>
                 <div class="row ">
                     <div class="col-md-12 form-group">
-                        <input type=text class=form-control name=name id=name placeholder=Name>
+                        <input type=text class=form-control name=name id=popup_name placeholder=Name>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-12 form-group">
-                        <input type=text class=form-control name=email id=email placeholder="Email Address">
+                        <input type=text class=form-control name=email id=popup_email placeholder="Email Address">
                     </div>
                 </div>
                 <div class="row ">
                     <div class="dropdown col-md-12 my-1">
-                        <select class="btn btn-custom dropdown-toggle" id=type_flats
+                        <select class="btn btn-custom dropdown-toggle" id=popup_type_flats
                             aria-labelledby=dropdownMenuButton1 style=color:black>
                             <li>
                                 <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
@@ -60,17 +62,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="row " id=send_otp>
+                <div class="row " id=popup_send_otp>
                     <div class="col-md-12 form-group my-1">
-                        <input type=text class=form-control name=number id=phone_number
+                        <input type=text class=form-control name=number id=popup_phone_number
                             placeholder="Phone Number">
                         <button type=button class="btn btn-custom my-2 px-3" onclick=Send_OTP()>SEND
                             OTP</button>
                     </div>
                 </div>
-                <div class="row " id=confirm_otp style=display:none>
+                <div class="row " id=popup_confirm_otp style=display:none>
                     <div class="col-md-12 form-group my-1">
-                        <input type=text class=form-control name=number id=verificationCode
+                        <input type=text class=form-control name=number id=popup_verificationCode
                             placeholder="Enter OTP">
                     </div>
                 </div>
@@ -85,7 +87,7 @@
                         conditions</p>
                 </div>
             </center>
-            
+
         </div>
 
     </center>
@@ -95,7 +97,7 @@
                 <div class=col-md-10>
                     <div class="row justify-content-center">
                         <div class=col-md-6>
-                            <p><img src=images/flat.jpeg alt=Image class=img-fluid></p>
+                            <p ><img src=images/flat.jpeg alt=Image class=img-fluid></p>
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="row mx-3">
@@ -115,57 +117,62 @@
                             <div class="row mx-3">
                                 <h3 class=col-md-12 style=font-family:Yeseva>Get In Touch</h3>
                             </div>
-                            <div class="row mx-3">
-                                <div class="col-md-12 form-group">
-                                    <input type=text class=form-control name=name id=name placeholder=Name>
+                            <div id="block_chain">
+                                <div class="row mx-3">
+                                    <div class="col-md-12 form-group">
+                                        <input type=text class=form-control name=name id=name placeholder=Name>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mx-3">
-                                <div class="col-md-12 form-group">
-                                    <input type=text class=form-control name=email id=email placeholder="Email Address">
+                                <div class="row mx-3">
+                                    <div class="col-md-12 form-group">
+                                        <input type=text class=form-control name=email id=email
+                                            placeholder="Email Address">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mx-3">
-                                <div class="dropdown col-md-12 my-1">
-                                    <select class="btn btn-custom dropdown-toggle" id=type_flats
-                                        aria-labelledby=dropdownMenuButton1 style=color:black>
-                                        <li>
-                                            <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
-                                                REQUIREMENT</option>
-                                        </li>
-                                        <li>
-                                            <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2 Bhk's
-                                                starting @ 28.67
-                                                lakhs</option>
-                                        </li>
-                                        <li>
-                                            <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3 Bhk's
-                                                starting @ 36.16
-                                                lakhs</option>
-                                        </li>
-                                    </select>
+                                <div class="row mx-3">
+                                    <div class="dropdown col-md-12 my-1">
+                                        <select class="btn btn-custom dropdown-toggle" id=type_flats
+                                            aria-labelledby=dropdownMenuButton1 style=color:black>
+                                            <li>
+                                                <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+                                                    REQUIREMENT</option>
+                                            </li>
+                                            <li>
+                                                <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+                                                    Bhk's
+                                                    starting @ 28.67
+                                                    lakhs</option>
+                                            </li>
+                                            <li>
+                                                <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+                                                    Bhk's
+                                                    starting @ 36.16
+                                                    lakhs</option>
+                                            </li>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mx-3" id=send_otp>
-                                <div class="col-md-12 form-group my-1">
-                                    <input type=text class=form-control name=number id=phone_number
-                                        placeholder="Phone Number">
-                                    <button type=button class="btn btn-custom my-2 px-3" onclick=Send_OTP()>SEND
-                                        OTP</button>
+                                <div class="row mx-3" id=send_otp>
+                                    <div class="col-md-12 form-group my-1">
+                                        <input type=text class=form-control name=number id=phone_number
+                                            placeholder="Phone Number">
+                                        <button type=button class="btn btn-custom my-2 px-3"
+                                            onclick=Send_OTP()>SUBMIT</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mx-3" id=confirm_otp style=display:none>
                                 <div class="col-md-12 form-group my-1">
                                     <input type=text class=form-control name=number id=verificationCode
                                         placeholder="Enter OTP">
-                                </div>
-                            </div>
-                            <div class="row mx-3">
-                                <div class=col-md-12>
-                                    <button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=Confirm_OTP()>
+                                    <button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=Confirm_OTP()>
                                         SUBMIT</button>
                                 </div>
                             </div>
+                            <!-- <div class="row mx-3">
+                                <div class=col-md-12>
+                                </div>
+                            </div> -->
                             <div class="row mx-3">
                                 <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
                                     conditions</p>
@@ -175,31 +182,32 @@
                 </div>
             </div>
         </div>
- <style>
-    .float{
-        position:fixed;
-        width:60px;
-        height:60px;
-        bottom:40px;
-        right:40px;
-        background-color:#25d366;
-        color:#FFF;
-        border-radius:50px;
-        text-align:center;
-      font-size:30px;
-        box-shadow: 2px 2px 3px #999;
-      z-index:100;
-    }
-    
-    .my-float{
-        margin-top:16px;
-    }
- </style>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- <a href="https://api.whatsapp.com/send?phone=+917974378884" class="float" target="_blank">
- <i class="fa fa-whatsapp my-float"></i>
- </a>
-<!-- /GetButton.io widget -->
+        <!-- GetButton.io widget -->
+        <style>
+            .float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
+
+            .my-float {
+                margin-top: 16px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://api.whatsapp.com/send?phone=+918889990120" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+        <!-- /GetButton.io widget -->
         <footer id=footer class="section footer" style=color:aliceblue>
             <div class="card text-center bg-dark">
                 <div class=card-body style=color:antiquewhite>
@@ -217,7 +225,20 @@
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js></script>
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js></script>
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js></script>
-    <script>var firebaseConfig = { apiKey: "AIzaSyDo2UWpbmloaJap1aFcU5JqnWwu1oqff4U", authDomain: "ska-metroville.firebaseapp.com", projectId: "ska-metroville", storageBucket: "ska-metroville.appspot.com", messagingSenderId: "773487365179", appId: "1:773487365179:web:0d2b89776619b28330a01e", measurementId: "G-6511CWCLP3" }; firebase.initializeApp(firebaseConfig); firebase.analytics();</script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBpKn4xsWRlER61p2m8FvgJw2XHZaQYnHI",
+            authDomain: "otp-verfication-31865.firebaseapp.com",
+            databaseURL: "https://otp-verfication-31865-default-rtdb.firebaseio.com",
+            projectId: "otp-verfication-31865",
+            storageBucket: "otp-verfication-31865.appspot.com",
+            messagingSenderId: "670459591682",
+            appId: "1:670459591682:web:8b9b3da65534664b68bb1b",
+            measurementId: "G-L42NFZ0H1Q"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <script src=js/index.js></script>
     <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js
         integrity=sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4
