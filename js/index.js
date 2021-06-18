@@ -162,7 +162,11 @@ function Splash(){
 }
 function removed_done() {
    document.getElementById("main_content").classList.remove("main_imp");
-   document.getElementById("splash").style.display="none";
+   document.getElementById("splash").classList.add("animate__zoomOutDown");
+   setTimeout(function(){  
+    document.getElementById("splash").style.display="none";
+}, 1000);
+   
    window.onscroll = function() {};
 }
 function sai(){
