@@ -23,12 +23,12 @@
 <body onload="Splash()">
     <center>
         <div class="animate__animated animate__backInLeft card container more_imp my-5" id="splash" style="width: 18rem;display:none">
-
             <center>
                 <span type="button" id='close' style="position:relative;float:right" onclick="removed_done()">x</span>
                 <div class="row ">
                     <h3 class=col-md-12 style=font-family:Yeseva>Get In Touch</h3>
                 </div>
+                <div id="popup_block_chain">
                 <div class="row ">
                     <div class="col-md-12 form-group">
                         <input type=text class=form-control name=name id=popup_name placeholder=Name>
@@ -64,20 +64,16 @@
                     <div class="col-md-12 form-group my-1">
                         <input type=text class=form-control name=number id=popup_phone_number
                             placeholder="Phone Number">
-                        <button type=button class="btn btn-custom my-2 px-3" onclick=Send_OTP()>SEND
-                            OTP</button>
+                        <button type=button class="btn btn-custom my-2 px-3" onclick=Popup_Send_OTP()>SUBMIT</button>
                     </div>
                 </div>
+            </div>
                 <div class="row " id=popup_confirm_otp style=display:none>
                     <div class="col-md-12 form-group my-1">
                         <input type=text class=form-control name=number id=popup_verificationCode
                             placeholder="Enter OTP">
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class=col-md-12>
-                        <button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=sai()>
-                            SUBMIT</button>
+                            <button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=Popup_Confirm_OTP()>
+                                SUBMIT</button>
                     </div>
                 </div>
                 <div class="row ">
@@ -85,7 +81,6 @@
                         conditions</p>
                 </div>
             </center>
-
         </div>
 
     </center>
