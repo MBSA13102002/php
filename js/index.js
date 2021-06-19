@@ -304,7 +304,6 @@ function Popup_Confirm_OTP() {
 
 
 }
-
 function Splash() {
     setTimeout(function () {
         document.getElementById("main_content").classList.add("main_imp");
