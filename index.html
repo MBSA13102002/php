@@ -19,13 +19,38 @@
         background-color: #a98f6e;
         color: black
     }
-    .my-font{
+
+    .my-font {
         font-family: Yeseva One;
+    }
+
+    .my_form {
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .my-border {
+        border-radius: 30px;
+    }
+    .my-border-new {
+        border: 1px solid gray;
+        border-radius:8px;
     }
 </style>
 
-<body onload="Splash()">
-    <center>
+<!-- <body onload="Splash()"> -->
+
+<body>
+
+
+    <nav class="navbar navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo.jpeg" alt="" width="130" height="74" class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav>
+    <!-- <center>
         <div class="animate__animated animate__backInLeft card container more_imp my-5" id="splash"
             style="width: 18rem;display:none">
             <center>
@@ -89,18 +114,22 @@
             </center>
         </div>
 
-    </center>
+    </center> -->
     <div class="content" id="main_content">
         <div class=container>
             <div class="row justify-content-center">
                 <div class=col-md-10>
                     <div class="row justify-content-center">
                         <div class=col-md-6>
-                            <p><img src=images/flat.jpeg alt=Image class=img-fluid></p>
+                            <p><img src=images/flat.jpeg alt=Image class="img-fluid my-border"></p>
+                            <!-- <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=567&q=80"
+                                class="img-fluid m-1" alt="..." width="200" height="200">
+                            <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=567&q=80"
+                                class="img-fluid m-1" alt="..." width="200" height="200"> -->
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="row mx-3">
-                                <h2 class="col-md-12 my-font" >SKA Metro Ville</h2>
+                                <h2 class="col-md-12 my-font">SKA Metro Ville</h2>
 
                                 <p class=col-md-12 style=font-size:12px;font-family:Actor;color:black>
                                     <b>SKA Metro Ville is a RERA enlisted property situated
@@ -113,202 +142,191 @@
                                         Facilities</b>
                                 </p>
                             </div>
-                            <div class="row mx-3">
-                                <h3 class=col-md-12 style="font-family:Yeseva One">Get In Touch</h3>
-                            </div>
-                            <div id="block_chain">
+                            <div class="my_form">
                                 <div class="row mx-3">
-                                    <div class="col-md-12 form-group">
-                                        <input type=text class=form-control name=name id=name placeholder=Name>
+                                    <h3 class=col-md-12 style="font-family:Yeseva One">Get In Touch</h3>
+                                </div>
+                                <div id="block_chain">
+                                    <div class="row mx-3">
+                                        <div class="col-md-12 form-group">
+                                            <input type=text class=form-control name=name id=name placeholder=Name>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-3">
+                                        <div class="col-md-12 form-group">
+                                            <input type=text class=form-control name=email id=email
+                                                placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-3">
+                                        <div class="dropdown col-md-12 my-1">
+                                            <select class="btn btn-custom dropdown-toggle" id=type_flats
+                                                aria-labelledby=dropdownMenuButton1 style=color:black>
+                                                <li>
+                                                    <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE
+                                                        YOUR
+                                                        REQUIREMENT</option>
+                                                </li>
+                                                <li>
+                                                    <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+                                                        Bhk's
+                                                        starting @ 28.67
+                                                        lakhs</option>
+                                                </li>
+                                                <li>
+                                                    <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+                                                        Bhk's
+                                                        starting @ 36.16
+                                                        lakhs</option>
+                                                </li>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-3" id=send_otp>
+                                        <div class="col-md-12 form-group my-1">
+                                            <input type=text class=form-control name=number id=phone_number
+                                                placeholder="Phone Number">
+                                            <button type=button class="btn btn-custom my-2 px-3"
+                                                onclick=Send_OTP()>SUBMIT</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row mx-3">
-                                    <div class="col-md-12 form-group">
-                                        <input type=text class=form-control name=email id=email
-                                            placeholder="Email Address">
-                                    </div>
-                                </div>
-                                <div class="row mx-3">
-                                    <div class="dropdown col-md-12 my-1">
-                                        <select class="btn btn-custom dropdown-toggle" id=type_flats
-                                            aria-labelledby=dropdownMenuButton1 style=color:black>
-                                            <li>
-                                                <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
-                                                    REQUIREMENT</option>
-                                            </li>
-                                            <li>
-                                                <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
-                                                    Bhk's
-                                                    starting @ 28.67
-                                                    lakhs</option>
-                                            </li>
-                                            <li>
-                                                <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
-                                                    Bhk's
-                                                    starting @ 36.16
-                                                    lakhs</option>
-                                            </li>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mx-3" id=send_otp>
+                                <div class="row mx-3" id=confirm_otp style=display:none>
                                     <div class="col-md-12 form-group my-1">
-                                        <input type=text class=form-control name=number id=phone_number
-                                            placeholder="Phone Number">
-                                        <button type=button class="btn btn-custom my-2 px-3"
-                                            onclick=Send_OTP()>SUBMIT</button>
+                                        <input type=text class=form-control name=number id=verificationCode
+                                            placeholder="Enter OTP">
+                                        <button type=button class="btn btn-dark rounded-0 my-2 px-4"
+                                            onclick=Confirm_OTP()>
+                                            SUBMIT</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mx-3" id=confirm_otp style=display:none>
-                                <div class="col-md-12 form-group my-1">
-                                    <input type=text class=form-control name=number id=verificationCode
-                                        placeholder="Enter OTP">
-                                    <button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=Confirm_OTP()>
-                                        SUBMIT</button>
-                                </div>
-                            </div>
-                            <!-- <div class="row mx-3">
+                                <!-- <div class="row mx-3">
                                 <div class=col-md-12>
                                 </div>
                             </div> -->
-                            <div class="row mx-3">
-                                <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
-                                    conditions</p>
+                                <div class="row mx-3">
+                                    <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms
+                                        and
+                                        conditions</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- GetButton.io widget -->
-        <div class="container my-5">
-            <!-- START THE FEATURETTES -->
+        <hr class=" featurette-divider">
+        <div class=container>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="row mx-3">
+                        <h2 class='text-center my-font my-border-new'>Interior Home Designing</h2>
+                    </div>
+                    <div class="row mx-3">
 
-            <hr class="featurette-divider">
-  
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading  my-font">First featurette heading. <span class="text-muted">It’ll blow your
-                            mind.</span></h2>
-                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                        prose here.</p>
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=567&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+
+
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" role="img" aria-label="Placeholder: 500x500"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="col-md-6">
+                    <div class="row mx-3">
+                        <h2 class='text-center my-font my-border-new'>Interior Kitchen  Designing</h2>
+                        <hr>
+                    </div>
+                    <div class="row mx-3">
 
-                    
-
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading my-font">Oh yeah, it’s that good. <span class="text-muted">See for
-                            yourself.</span></h2>
-                    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                        how this layout would work with some actual real-world content in place.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" src="https://images.unsplash.com/photo-1549217272-1c31166a69f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" role="img" aria-label="Placeholder: 500x500"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="https://images.unsplash.com/photo-1586208958839-06c17cacdf08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=573&q=80&w=567&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/flagged/photo-1556438758-df7b9e0c0fe4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/photo-1489769002049-ccd828976a6c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=914&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
+                        <img src="https://images.unsplash.com/photo-1486304873000-235643847519?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"
+                            class="img-fluid m-1" alt="..." width="200" height="200">
 
 
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading my-font">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                    <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                        really intended to be actually read, simply here to give you a better view of what this would
-                        look like with some actual content. Your content.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=835&q=80" role="img" ">
+                    </div>
                 </div>
             </div>
-
-            <hr class="featurette-divider">
-
-<div class="container my-5">
-<!-- ===============================NEW FORM============================== -->
-    <div class="row mx-3">
-        <h3 class="col-md-12 text-center" style="font-family:Yeseva One;">Contact Us</h3>
+        </div>
+        <hr class=" featurette-divider">
+ 
     </div>
-    <div id="new_block_chain">
+    </div>
+    <div class="container my-5">
+        <!-- ===============================NEW FORM============================== -->
         <div class="row mx-3">
-            <div class="col-md-12 form-group">
-                <input type=text class=form-control name=name id=new_name placeholder=Name>
+            <h3 class="col-md-12 text-center" style="font-family:Yeseva One;">Contact Us</h3>
+        </div>
+        <div id="new_block_chain">
+            <div class="row mx-3">
+                <div class="col-md-12 form-group">
+                    <input type=text class=form-control name=name id=new_name placeholder=Name>
+                </div>
+            </div>
+            <div class="row mx-3">
+                <div class="col-md-12 form-group">
+                    <input type=text class=form-control name=email id=new_email placeholder="Email Address">
+                </div>
+            </div>
+            <div class="row mx-3">
+                <div class="dropdown col-md-12 my-1">
+                    <select class="btn btn-custom dropdown-toggle" id=new_type_flats aria-labelledby=dropdownMenuButton1
+                        style=color:black>
+                        <li>
+                            <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+                                REQUIREMENT</option>
+                        </li>
+                        <li>
+                            <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+                                Bhk's
+                                starting @ 28.67
+                                lakhs</option>
+                        </li>
+                        <li>
+                            <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+                                Bhk's
+                                starting @ 36.16
+                                lakhs</option>
+                        </li>
+                    </select>
+                </div>
+            </div>
+            <div class="row mx-3" id=new_send_otp>
+                <div class="col-md-12 form-group my-1">
+                    <input type=text class=form-control name=number id=new_phone_number placeholder="Phone Number">
+                    <button type=button class="btn btn-custom my-2 px-3" onclick=New_Send_OTP()>SUBMIT</button>
+                </div>
             </div>
         </div>
-        <div class="row mx-3">
-            <div class="col-md-12 form-group">
-                <input type=text class=form-control name=email id=new_email
-                    placeholder="Email Address">
-            </div>
-        </div>
-        <div class="row mx-3">
-            <div class="dropdown col-md-12 my-1">
-                <select class="btn btn-custom dropdown-toggle" id=new_type_flats
-                    aria-labelledby=dropdownMenuButton1 style=color:black>
-                    <li>
-                        <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
-                            REQUIREMENT</option>
-                    </li>
-                    <li>
-                        <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
-                            Bhk's
-                            starting @ 28.67
-                            lakhs</option>
-                    </li>
-                    <li>
-                        <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
-                            Bhk's
-                            starting @ 36.16
-                            lakhs</option>
-                    </li>
-                </select>
-            </div>
-        </div>
-        <div class="row mx-3" id=new_send_otp>
+        <div class="row mx-3" id=new_confirm_otp style=display:none>
             <div class="col-md-12 form-group my-1">
-                <input type=text class=form-control name=number id=new_phone_number
-                    placeholder="Phone Number">
-                <button type=button class="btn btn-custom my-2 px-3"
-                    onclick=New_Send_OTP()>SUBMIT</button>
+                <input type=text class=form-control name=number id=new_verificationCode placeholder="Enter OTP">
+                <button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=New_Confirm_OTP()>
+                    SUBMIT</button>
             </div>
         </div>
-    </div>
-    <div class="row mx-3" id=new_confirm_otp style=display:none>
-        <div class="col-md-12 form-group my-1">
-            <input type=text class=form-control name=number id=new_verificationCode
-                placeholder="Enter OTP">
-            <button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=New_Confirm_OTP()>
-                SUBMIT</button>
-        </div>
-    </div>
-    <!-- <div class="row mx-3">
+        <!-- <div class="row mx-3">
         <div class=col-md-12>
         </div>
     </div> -->
-    <div class="row mx-3">
-        <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
-            conditions</p>
-    </div>
-    <!-- ==================================NEW FORM END=============================== -->
-</div>
-
+        <div class="row mx-3">
+            <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
+                conditions</p>
         </div>
-        <!-- <style>
+        <!-- ==================================NEW FORM END=============================== -->
+    </div>
+
+
+    <!-- <style>
             .float {
                 position: fixed;
                 width: 60px;
@@ -332,20 +350,21 @@
         <a href="https://api.whatsapp.com/send?phone=+918889990120" class="float" target="_blank">
             <i class="my-float"></i>
         </a> -->
-        <!-- /GetButton.io widget -->
-        <footer id=footer class="section footer" style=color:aliceblue>
-            <div class="card text-center bg-dark">
-                <div class=card-body style=color:antiquewhite>
-                    <a href=tel:9560252011><button type=button class="btn btn-success">Call Now !</button></a>
-                    <p><a href=T&C>Terms & Conditions</a> <a href="privacy policy">Privacy Policy</a> </p>
-                    <h5 class=card-title style=color:aliceblue;font-size:15px>Copyright <i>&#xa9</i> 2021
-                        Gettingmybooking
-                        .All rights
-                        reserved
-                    </h5>
-                </div>
+    <!-- /GetButton.io widget -->
+    <footer id=footer class="section footer" style=color:aliceblue>
+        <div class="card text-center bg-dark">
+            <div class=card-body style=color:antiquewhite>
+                <a href=tel:9560252011><button type=button class="btn btn-success">Call Now
+                        !</button></a>
+                <p><a href=T&C>Terms & Conditions</a> <a href="privacy policy">Privacy Policy</a> </p>
+                <h5 class=card-title style=color:aliceblue;font-size:15px>Copyright <i>&#xa9</i> 2021
+                    Gettingmybooking
+                    .All rights
+                    reserved
+                </h5>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js></script>
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js></script>
