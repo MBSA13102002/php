@@ -4,6 +4,15 @@ function Send_OTP() {
     var Email = document.getElementById('email').value
     var Number = document.getElementById('phone_number').value
     var Choice = document.getElementById('type_flats').value
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours()
+    var min = today.getMinutes()
+    var sec = today.getSeconds()
+    today = dd + '/' + mm + '/' + yyyy;
+    time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
@@ -18,10 +27,15 @@ function Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            // localStorage.setItem("phone_num", Number)
-            // localStorage.setItem("Name", Name)
-            // localStorage.setItem("Email", Email)
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            formMessage.set({
+                Name: Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
             document.getElementById('confirm_otp').style.display = "block";
             document.getElementById('block_chain').style.display = "none";
             // document.getElementById('send_otp').style.display="none"; 
@@ -35,9 +49,6 @@ function Send_OTP() {
         alert("FIRST FILL ALL THE DETAILS")
     }
 
-    // console.log(stat,session_id)
-    // console.log(xmlHttp.responseText);
-
 }
 
 function New_Send_OTP() {
@@ -45,6 +56,15 @@ function New_Send_OTP() {
     var Email = document.getElementById('new_email').value
     var Number = document.getElementById('new_phone_number').value
     var Choice = document.getElementById('new_type_flats').value
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours()
+    var min = today.getMinutes()
+    var sec = today.getSeconds()
+    today = dd + '/' + mm + '/' + yyyy;
+    time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
@@ -59,9 +79,14 @@ function New_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            // localStorage.setItem("phone_num", Number)
-            // localStorage.setItem("Name", Name)
-            // localStorage.setItem("Email", Email)
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            formMessage.set({
+                Name: Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
             document.getElementById('new_confirm_otp').style.display = "block";
             document.getElementById('new_block_chain').style.display = "none";
@@ -76,8 +101,7 @@ function New_Send_OTP() {
         alert("FIRST FILL ALL THE DETAILS")
     }
 
-    // console.log(stat,session_id)
-    // console.log(xmlHttp.responseText);
+
 
 }
 
@@ -86,6 +110,15 @@ function Popup_Send_OTP() {
     var Email = document.getElementById('popup_email').value
     var Number = document.getElementById('popup_phone_number').value
     var Choice = document.getElementById('popup_type_flats').value
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours()
+    var min = today.getMinutes()
+    var sec = today.getSeconds()
+    today = dd + '/' + mm + '/' + yyyy;
+    time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
@@ -100,9 +133,14 @@ function Popup_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            // localStorage.setItem("phone_num", Number)
-            // localStorage.setItem("Name", Name)
-            // localStorage.setItem("Email", Email)
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            formMessage.set({
+                Name: Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
             document.getElementById('popup_confirm_otp').style.display = "block";
             document.getElementById('popup_block_chain').style.display = "none";
@@ -117,8 +155,7 @@ function Popup_Send_OTP() {
         alert("FIRST FILL ALL THE DETAILS")
     }
 
-    // console.log(stat,session_id)
-    // console.log(xmlHttp.responseText);
+
 
 }
 function Confirm_OTP() {
@@ -129,13 +166,13 @@ function Confirm_OTP() {
     var Verification_Code = document.getElementById('verificationCode').value
     var Choice = document.getElementById('type_flats').value
     var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    today = dd + '/' + mm + '/' + yyyy;
+    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
@@ -149,15 +186,15 @@ function Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA");
-            formMessage.push({
-                Name: Name,
-                Email: Email,
-                Number: Number,
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            formMessage.set({
+                // Name: Name,
+                // Email: Email,
+                // Number: Number,
                 OTP: Verification_Code,
-                date: today,
+                // date: today,
                 time: time,
-                Choice: Choice
+                // Choice: Choice
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("name").value = ''
@@ -165,22 +202,14 @@ function Confirm_OTP() {
             document.getElementById("phone_number").value = ''
             document.getElementById("type_flats").value = "CHOOSE YOUR REQUIREMENT"
             document.getElementById("confirm_otp").style.display = "none";
-
-
-
         }
         else {
             alert("ERROR OCCURED")
-
         }
     }
     else {
         alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
     }
-
-
-
-
 }
 function New_Confirm_OTP() {
 
@@ -190,13 +219,13 @@ function New_Confirm_OTP() {
     var Verification_Code = document.getElementById('new_verificationCode').value
     var Choice = document.getElementById('new_type_flats').value
     var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    today = dd + '/' + mm + '/' + yyyy;
+    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
@@ -210,15 +239,15 @@ function New_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA");
-            formMessage.push({
-                Name: Name,
-                Email: Email,
-                Number: Number,
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            formMessage.set({
+                // Name: Name,
+                // Email: Email,
+                // Number: Number,
                 OTP: Verification_Code,
-                date: today,
+                // date: today,
                 time: time,
-                Choice: Choice
+                // Choice: Choice
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("new_name").value = ''
@@ -226,22 +255,14 @@ function New_Confirm_OTP() {
             document.getElementById("new_phone_number").value = ''
             document.getElementById("new_type_flats").value = "CHOOSE YOUR REQUIREMENT"
             document.getElementById("new_confirm_otp").style.display = "none";
-
-
-
         }
         else {
             alert("ERROR OCCURED")
-
         }
     }
     else {
         alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
     }
-
-
-
-
 }
 function Popup_Confirm_OTP() {
 
@@ -251,13 +272,13 @@ function Popup_Confirm_OTP() {
     var Verification_Code = document.getElementById('popup_verificationCode').value
     var Choice = document.getElementById('popup_type_flats').value
     var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    today = dd + '/' + mm + '/' + yyyy;
+    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
@@ -271,15 +292,15 @@ function Popup_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA");
-            formMessage.push({
-                Name: Name,
-                Email: Email,
-                Number: Number,
+            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            formMessage.set({
+                // Name: Name,
+                // Email: Email,
+                // Number: Number,
                 OTP: Verification_Code,
-                date: today,
+                // date: today,
                 time: time,
-                Choice: Choice
+                // Choice: Choice
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("popup_name").value = ''
@@ -287,9 +308,6 @@ function Popup_Confirm_OTP() {
             document.getElementById("popup_phone_number").value = ''
             document.getElementById("popup_type_flats").value = "CHOOSE YOUR REQUIREMENT"
             document.getElementById("popup_confirm_otp").style.display = "none";
-
-
-
         }
         else {
             alert("ERROR OCCURED")
@@ -299,10 +317,6 @@ function Popup_Confirm_OTP() {
     else {
         alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
     }
-
-
-
-
 }
 function Splash() {
     setTimeout(function () {
@@ -338,8 +352,7 @@ function removed_done() {
 
             } else {
 
-            }
-         
+            }      
         }
         else {
             document.getElementById("splash").classList.add("animate__zoomOutDown");
@@ -353,6 +366,4 @@ function removed_done() {
     else{
         alert("Verfication under process..Enter the OTP & Submit the form!!!")
     }
-
-   
 }

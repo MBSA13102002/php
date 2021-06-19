@@ -36,14 +36,14 @@
         var sec = today.getSeconds()
         today = dd + '/' + mm + '/' + yyyy;
         time = hour + ":" + min + ":" + sec
-        //  let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
-        // formMessage.set({
-        //     Name: Name,
-        //     Email: Email,
-        //     Number: Number,
-        //     date: today,
-        //     time: time,
-        // });
+          let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+         formMessage.set({
+             Name: Name,
+             Email: Email,
+             Number: Number,
+             date: today,
+             time: time,
+         });
         let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");
         formMessage.set({
             Name: Name,
