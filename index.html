@@ -19,61 +19,67 @@
         background-color: #a98f6e;
         color: black
     }
+    .my-font{
+        font-family: Yeseva One;
+    }
 </style>
+
 <body onload="Splash()">
     <center>
-        <div class="animate__animated animate__backInLeft card container more_imp my-5" id="splash" style="width: 18rem;display:none">
+        <div class="animate__animated animate__backInLeft card container more_imp my-5" id="splash"
+            style="width: 18rem;display:none">
             <center>
                 <span type="button" id='close' style="position:relative;float:right" onclick="removed_done()">x</span>
                 <div class="row ">
                     <h3 class=col-md-12 style=font-family:Yeseva>Get In Touch</h3>
                 </div>
                 <div id="popup_block_chain">
-                <div class="row ">
-                    <div class="col-md-12 form-group">
-                        <input type=text class=form-control name=name id=popup_name placeholder=Name>
+                    <div class="row ">
+                        <div class="col-md-12 form-group">
+                            <input type=text class=form-control name=name id=popup_name placeholder=Name>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 form-group">
+                            <input type=text class=form-control name=email id=popup_email placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="dropdown col-md-12 my-1">
+                            <select class="btn btn-custom dropdown-toggle" id=popup_type_flats
+                                aria-labelledby=dropdownMenuButton1 style=color:black>
+                                <li>
+                                    <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+                                        REQUIREMENT</option>
+                                </li>
+                                <li>
+                                    <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2 Bhk's
+                                        starting @ 28.67
+                                        lakhs</option>
+                                </li>
+                                <li>
+                                    <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3 Bhk's
+                                        starting @ 36.16
+                                        lakhs</option>
+                                </li>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row " id=popup_send_otp>
+                        <div class="col-md-12 form-group my-1">
+                            <input type=text class=form-control name=number id=popup_phone_number
+                                placeholder="Phone Number">
+                            <button type=button class="btn btn-custom my-2 px-3"
+                                onclick=Popup_Send_OTP()>SUBMIT</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row ">
-                    <div class="col-md-12 form-group">
-                        <input type=text class=form-control name=email id=popup_email placeholder="Email Address">
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="dropdown col-md-12 my-1">
-                        <select class="btn btn-custom dropdown-toggle" id=popup_type_flats
-                            aria-labelledby=dropdownMenuButton1 style=color:black>
-                            <li>
-                                <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
-                                    REQUIREMENT</option>
-                            </li>
-                            <li>
-                                <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2 Bhk's
-                                    starting @ 28.67
-                                    lakhs</option>
-                            </li>
-                            <li>
-                                <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3 Bhk's
-                                    starting @ 36.16
-                                    lakhs</option>
-                            </li>
-                        </select>
-                    </div>
-                </div>
-                <div class="row " id=popup_send_otp>
-                    <div class="col-md-12 form-group my-1">
-                        <input type=text class=form-control name=number id=popup_phone_number
-                            placeholder="Phone Number">
-                        <button type=button class="btn btn-custom my-2 px-3" onclick=Popup_Send_OTP()>SUBMIT</button>
-                    </div>
-                </div>
-            </div>
                 <div class="row " id=popup_confirm_otp style=display:none>
                     <div class="col-md-12 form-group my-1">
                         <input type=text class=form-control name=number id=popup_verificationCode
                             placeholder="Enter OTP">
-                            <button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=Popup_Confirm_OTP()>
-                                SUBMIT</button>
+                        <button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=Popup_Confirm_OTP()>
+                            SUBMIT</button>
                     </div>
                 </div>
                 <div class="row ">
@@ -90,11 +96,11 @@
                 <div class=col-md-10>
                     <div class="row justify-content-center">
                         <div class=col-md-6>
-                            <p ><img src=images/flat.jpeg alt=Image class=img-fluid></p>
+                            <p><img src=images/flat.jpeg alt=Image class=img-fluid></p>
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="row mx-3">
-                                <h2 class=col-md-12 style=font-family:Alatsi>SKA Metro Ville</h2>
+                                <h2 class="col-md-12 my-font" >SKA Metro Ville</h2>
 
                                 <p class=col-md-12 style=font-size:12px;font-family:Actor;color:black>
                                     <b>SKA Metro Ville is a RERA enlisted property situated
@@ -108,7 +114,7 @@
                                 </p>
                             </div>
                             <div class="row mx-3">
-                                <h3 class=col-md-12 style=font-family:Yeseva>Get In Touch</h3>
+                                <h3 class=col-md-12 style="font-family:Yeseva One">Get In Touch</h3>
                             </div>
                             <div id="block_chain">
                                 <div class="row mx-3">
@@ -176,6 +182,132 @@
             </div>
         </div>
         <!-- GetButton.io widget -->
+        <div class="container my-5">
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+  
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading  my-font">First featurette heading. <span class="text-muted">It’ll blow your
+                            mind.</span></h2>
+                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+                        prose here.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    
+
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading my-font">Oh yeah, it’s that good. <span class="text-muted">See for
+                            yourself.</span></h2>
+                    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
+                        how this layout would work with some actual real-world content in place.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" src="https://images.unsplash.com/photo-1549217272-1c31166a69f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading my-font">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                    <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
+                        really intended to be actually read, simply here to give you a better view of what this would
+                        look like with some actual content. Your content.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=835&q=80" role="img" ">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+<div class="container my-5">
+<!-- ===============================NEW FORM============================== -->
+    <div class="row mx-3">
+        <h3 class="col-md-12 text-center" style="font-family:Yeseva One;">Get In Touch</h3>
+    </div>
+    <div id="new_block_chain">
+        <div class="row mx-3">
+            <div class="col-md-12 form-group">
+                <input type=text class=form-control name=name id=new_name placeholder=Name>
+            </div>
+        </div>
+        <div class="row mx-3">
+            <div class="col-md-12 form-group">
+                <input type=text class=form-control name=email id=new_email
+                    placeholder="Email Address">
+            </div>
+        </div>
+        <div class="row mx-3">
+            <div class="dropdown col-md-12 my-1">
+                <select class="btn btn-custom dropdown-toggle" id=new_type_flats
+                    aria-labelledby=dropdownMenuButton1 style=color:black>
+                    <li>
+                        <option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+                            REQUIREMENT</option>
+                    </li>
+                    <li>
+                        <option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+                            Bhk's
+                            starting @ 28.67
+                            lakhs</option>
+                    </li>
+                    <li>
+                        <option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+                            Bhk's
+                            starting @ 36.16
+                            lakhs</option>
+                    </li>
+                </select>
+            </div>
+        </div>
+        <div class="row mx-3" id=new_send_otp>
+            <div class="col-md-12 form-group my-1">
+                <input type=text class=form-control name=number id=new_phone_number
+                    placeholder="Phone Number">
+                <button type=button class="btn btn-custom my-2 px-3"
+                    onclick=Send_OTP()>SUBMIT</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-3" id=new_confirm_otp style=display:none>
+        <div class="col-md-12 form-group my-1">
+            <input type=text class=form-control name=number id=new_verificationCode
+                placeholder="Enter OTP">
+            <button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=Confirm_OTP()>
+                SUBMIT</button>
+        </div>
+    </div>
+    <!-- <div class="row mx-3">
+        <div class=col-md-12>
+        </div>
+    </div> -->
+    <div class="row mx-3">
+        <p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
+            conditions</p>
+    </div>
+    <!-- ==================================NEW FORM END=============================== -->
+</div>
+
+        </div>
         <style>
             .float {
                 position: fixed;
