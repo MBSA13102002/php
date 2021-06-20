@@ -14,7 +14,15 @@ function Send_OTP() {
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
-
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -28,9 +36,9 @@ function Send_OTP() {
 
         if (stat == "Success") {
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
-                Name: Name,
+                Name: New_Name,
                 Email: Email,
                 Number: Number,
                 date: today,
@@ -66,7 +74,15 @@ function New_Send_OTP() {
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
-
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -79,9 +95,9 @@ function New_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Nae + "  " + Number.substring(Number.length - 10));
             formMessage.set({
-                Name: Name,
+                Name: New_Name,
                 Email: Email,
                 Number: Number,
                 date: today,
@@ -120,7 +136,15 @@ function Popup_Send_OTP() {
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
-
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -133,9 +157,9 @@ function Popup_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
-                Name: Name,
+                Name: New_Name,
                 Email: Email,
                 Number: Number,
                 date: today,
@@ -166,16 +190,21 @@ function Confirm_OTP() {
     var Verification_Code = document.getElementById('verificationCode').value
     var Choice = document.getElementById('type_flats').value
     var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -186,15 +215,10 @@ function Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
-                // Name: Name,
-                // Email: Email,
-                // Number: Number,
                 OTP: Verification_Code,
-                // date: today,
                 time: time,
-                // Choice: Choice
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("name").value = ''
@@ -219,16 +243,21 @@ function New_Confirm_OTP() {
     var Verification_Code = document.getElementById('new_verificationCode').value
     var Choice = document.getElementById('new_type_flats').value
     var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -237,17 +266,14 @@ function New_Confirm_OTP() {
         result = xmlHttp.responseText
         var res = result.split(",");
         stat = res[0].slice(11, res[0].length - 1)
-        // detail = res[1].slice(10,res[1].length-1)
+
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
-                // Name: Name,
-                // Email: Email,
-                // Number: Number,
                 OTP: Verification_Code,
-                // date: today,
+
                 time: time,
-                // Choice: Choice
+
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("new_name").value = ''
@@ -272,16 +298,21 @@ function Popup_Confirm_OTP() {
     var Verification_Code = document.getElementById('popup_verificationCode').value
     var Choice = document.getElementById('popup_type_flats').value
     var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    // var yyyy = today.getFullYear();
     var hour = today.getHours()
     var min = today.getMinutes()
     var sec = today.getSeconds()
-    // today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
 
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+        New_Name=''
+        for (i = 0; i < Name.length; i++) {
+            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+                New_Name = New_Name + " "
+            }
+            else {
+                New_Name = New_Name + Name.charAt(i)
+            }
+        }
         var xmlHttp = new XMLHttpRequest();
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
@@ -290,17 +321,11 @@ function Popup_Confirm_OTP() {
         result = xmlHttp.responseText
         var res = result.split(",");
         stat = res[0].slice(11, res[0].length - 1)
-        // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
-                // Name: Name,
-                // Email: Email,
-                // Number: Number,
                 OTP: Verification_Code,
-                // date: today,
                 time: time,
-                // Choice: Choice
             });
             alert("Our expert will get in touch with you shortly!!")
             document.getElementById("popup_name").value = ''
@@ -326,7 +351,7 @@ function Splash() {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
 
-            // if any scroll is attempted, set this to the previous value
+
             window.onscroll = function () {
                 window.scrollTo(scrollLeft, scrollTop);
             };
