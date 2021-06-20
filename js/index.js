@@ -16,7 +16,7 @@ function Send_OTP() {
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -28,7 +28,7 @@ function Send_OTP() {
 
         if (stat == "Success") {
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -68,7 +68,7 @@ function New_Send_OTP() {
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -79,7 +79,7 @@ function New_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -122,7 +122,7 @@ function Popup_Send_OTP() {
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
 
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -133,7 +133,7 @@ function Popup_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -186,7 +186,7 @@ function Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
@@ -239,7 +239,7 @@ function New_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
@@ -292,7 +292,7 @@ function Popup_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
