@@ -25,14 +25,14 @@ function Send_OTP() {
         }
         var xmlHttp = new XMLHttpRequest();
 
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
-        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1);
-        detail = res[1].slice(11, res[1].length - 2);
+        Result = JSON.parse(result)
+        stat = Result.Status;
+        detail = Result.Details;
         window.session_id = detail;
 
         if (stat == "Success") {
@@ -90,9 +90,9 @@ function New_Send_OTP() {
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1);
-        detail = res[1].slice(11, res[1].length - 2);
+        Result = JSON.parse(result)
+        stat = Result.Status;
+        detail = Result.Details;
         window.session_id = detail;
 
         if (stat == "Success") {
@@ -152,9 +152,9 @@ function Popup_Send_OTP() {
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1);
-        detail = res[1].slice(11, res[1].length - 2);
+        Result = JSON.parse(result)
+        stat = Result.Status;
+        detail = Result.Details;
         window.session_id = detail;
 
         if (stat == "Success") {
@@ -212,9 +212,8 @@ function Confirm_OTP() {
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1)
-        // detail = res[1].slice(10,res[1].length-1)
+        Result = JSON.parse(result)
+        stat = Result.Status;
         if (stat == "Success") {
             let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
@@ -265,8 +264,8 @@ function New_Confirm_OTP() {
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1)
+        Result = JSON.parse(result)
+        stat = Result.Status;
 
         if (stat == "Success") {
             let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
@@ -320,8 +319,8 @@ function Popup_Confirm_OTP() {
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText
-        var res = result.split(",");
-        stat = res[0].slice(11, res[0].length - 1)
+        Result = JSON.parse(result)
+        stat = Result.Status;
         if (stat == "Success") {
             let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10)).child("OTP-Verified!!");;
             formMessage.set({
