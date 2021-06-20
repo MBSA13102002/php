@@ -330,6 +330,7 @@ function Splash() {
             window.onscroll = function () {
                 window.scrollTo(scrollLeft, scrollTop);
             };
+            window.confirmation =true;
     }, 3000);
 
 }
@@ -349,6 +350,7 @@ function removed_done() {
                     document.getElementById("splash").style.display = "none";
                 }, 1000);
                 window.onscroll = function () { };
+                window.confirmation =false;
 
             } else {
 
@@ -361,9 +363,37 @@ function removed_done() {
                 document.getElementById("splash").style.display = "none";
             }, 1000);
             window.onscroll = function () { };
-        }
+        }  window.confirmation =false;
     }
     else{
         alert("Verfication under process..Enter the OTP & Submit the form!!!")
+    }
+}
+window.confirmation = false
+function Display_Popup(){
+    if (window.confirmation==false){
+        document.getElementById("splash").classList.remove("animate__zoomOutDown");
+        console.log("if")
+        document.getElementById("main_content").classList.add("main_imp");
+        document.getElementById("splash").style.display = "block";
+        document.getElementById("splash").style.top = window.pageYOffset.toString() + 'px';
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        window.confirmation = true;
+    }
+    else{
+        console.log("else");
+        document.getElementById("splash").classList.add("animate__zoomOutDown");
+        setTimeout(function () {
+            document.getElementById("main_content").classList.remove("main_imp");
+            document.getElementById("splash").style.display = "none";
+        }, 1000);
+        window.onscroll = function () { };
+        window.confirmation = false;
     }
 }
