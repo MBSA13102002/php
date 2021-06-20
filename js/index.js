@@ -13,7 +13,7 @@ function Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -24,6 +24,7 @@ function Send_OTP() {
             }
         }
         var xmlHttp = new XMLHttpRequest();
+
         theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
@@ -54,7 +55,7 @@ function Send_OTP() {
 
     }
     else {
-        alert("FIRST FILL ALL THE DETAILS")
+        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
     }
 
 }
@@ -73,7 +74,7 @@ function New_Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -114,7 +115,7 @@ function New_Send_OTP() {
 
     }
     else {
-        alert("FIRST FILL ALL THE DETAILS")
+        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
     }
 
 
@@ -135,7 +136,7 @@ function Popup_Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -176,7 +177,7 @@ function Popup_Send_OTP() {
 
     }
     else {
-        alert("FIRST FILL ALL THE DETAILS")
+        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
     }
 
 
@@ -195,7 +196,7 @@ function Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -248,7 +249,7 @@ function New_Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -303,7 +304,7 @@ function Popup_Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -366,7 +367,7 @@ function removed_done() {
     var Choice = document.getElementById('popup_type_flats').value
     var code_display = document.getElementById("popup_confirm_otp").style.display
     if (code_display == 'none') {
-        if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT") {
+        if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT" || Number.length==10) {
             var ref = confirm("Do you really want to exit the enquiry?")
             if (ref == true) {
                 document.getElementById("splash").classList.add("animate__zoomOutDown");
@@ -418,7 +419,7 @@ function Display_Popup() {
         var Choice = document.getElementById('popup_type_flats').value
         var code_display = document.getElementById("popup_confirm_otp").style.display
         if (code_display == 'none') {
-            if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT") {
+            if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT"|| Number.length==10) {
                 var ref = confirm("Do you really want to exit the enquiry?")
                 if (ref == true) {
                     document.getElementById("splash").classList.add("animate__zoomOutDown");
