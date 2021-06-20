@@ -28,7 +28,7 @@ function Send_OTP() {
 
         if (stat == "Success") {
             // alert("OTP HAS BEEN SENT TO YOUR MOBILE NUMBER")
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -79,7 +79,7 @@ function New_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -133,7 +133,7 @@ function Popup_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number);
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number);
             formMessage.set({
                 Name: Name,
                 Email: Email,
@@ -186,7 +186,7 @@ function Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
@@ -239,7 +239,7 @@ function New_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
@@ -292,7 +292,7 @@ function Popup_Confirm_OTP() {
         stat = res[0].slice(11, res[0].length - 1)
         // detail = res[1].slice(10,res[1].length-1)
         if (stat == "Success") {
-            let formMessage = firebase.database().ref("FORM DATA").child(Name+"  "+Number).child("OTP-Verified!!");;
+            let formMessage = firebase.database().ref("FORM DATA").child(Name + "  " + Number).child("OTP-Verified!!");;
             formMessage.set({
                 // Name: Name,
                 // Email: Email,
@@ -330,7 +330,7 @@ function Splash() {
             window.onscroll = function () {
                 window.scrollTo(scrollLeft, scrollTop);
             };
-            window.confirmation =true;
+        window.confirmation = true;
     }, 3000);
 
 }
@@ -350,11 +350,11 @@ function removed_done() {
                     document.getElementById("splash").style.display = "none";
                 }, 1000);
                 window.onscroll = function () { };
-                window.confirmation =false;
+                window.confirmation = false;
 
             } else {
 
-            }      
+            }
         }
         else {
             document.getElementById("splash").classList.add("animate__zoomOutDown");
@@ -363,15 +363,15 @@ function removed_done() {
                 document.getElementById("splash").style.display = "none";
             }, 1000);
             window.onscroll = function () { };
-        }  window.confirmation =false;
+        } window.confirmation = false;
     }
-    else{
+    else {
         alert("Verfication under process..Enter the OTP & Submit the form!!!")
     }
 }
 window.confirmation = false
-function Display_Popup(){
-    if (window.confirmation==false){
+function Display_Popup() {
+    if (window.confirmation == false) {
         document.getElementById("splash").classList.remove("animate__zoomOutDown");
         console.log("if")
         document.getElementById("main_content").classList.add("main_imp");
@@ -379,21 +379,56 @@ function Display_Popup(){
         document.getElementById("splash").style.top = window.pageYOffset.toString() + 'px';
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        
-        // if any scroll is attempted, set this to the previous value
-        window.onscroll = function () {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
+
+            // if any scroll is attempted, set this to the previous value
+            window.onscroll = function () {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
         window.confirmation = true;
     }
-    else{
-        console.log("else");
-        document.getElementById("splash").classList.add("animate__zoomOutDown");
-        setTimeout(function () {
-            document.getElementById("main_content").classList.remove("main_imp");
-            document.getElementById("splash").style.display = "none";
-        }, 1000);
-        window.onscroll = function () { };
-        window.confirmation = false;
+    else {
+        var Name = document.getElementById("popup_name").value
+        var Email = document.getElementById('popup_email').value
+        var Number = document.getElementById('popup_phone_number').value
+        var Choice = document.getElementById('popup_type_flats').value
+        var code_display = document.getElementById("popup_confirm_otp").style.display
+        if (code_display == 'none') {
+            if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT") {
+                var ref = confirm("Do you really want to exit the enquiry?")
+                if (ref == true) {
+                    document.getElementById("splash").classList.add("animate__zoomOutDown");
+                    setTimeout(function () {
+                        document.getElementById("main_content").classList.remove("main_imp");
+                        document.getElementById("splash").style.display = "none";
+                    }, 1000);
+                    window.onscroll = function () { };
+                    document.getElementById("popup_name").value=""
+                    document.getElementById('popup_email').value=""
+                   document.getElementById('popup_phone_number').value=""
+                   document.getElementById('popup_type_flats').value=""
+                    window.confirmation = false;
+
+                } else {
+
+                }
+            }
+            else {
+                document.getElementById("splash").classList.add("animate__zoomOutDown");
+                setTimeout(function () {
+                    document.getElementById("main_content").classList.remove("main_imp");
+                    document.getElementById("splash").style.display = "none";
+                }, 1000);
+                window.onscroll = function () { };
+            } window.confirmation = false;
+        }
+        else {
+            alert("Verfication under process..Enter the OTP & Submit the form!!!")
+            var Name = document.getElementById("popup_name").value
+            var Email = document.getElementById('popup_email').value
+            var Number = document.getElementById('popup_phone_number').value
+            var Choice = document.getElementById('popup_type_flats').value
+            var code_display = document.getElementById("popup_confirm_otp").style.display
+        }
+        
     }
 }
