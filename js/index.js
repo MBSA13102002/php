@@ -176,6 +176,7 @@ function Popup_Send_OTP() {
         window.session_id = detail;
 
         if (stat == "Success") {
+            document.getElementById("splash").style.top = (window.pageYOffset+120).toString() + 'px';
             let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10));
             formMessage.set({
                 Name: New_Name,
