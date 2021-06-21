@@ -154,7 +154,7 @@
                         </div>
                         <div class="col-md-6 my-2">
                             <div class="row mx-3">
-                                <h2 class="col-md-12 my-font">Welcome To SKA Metro Ville</h2>
+                                <h2 class="col-md-12 my-font ">Welcome To SKA Metro Ville</h2>
 
                                 <p class=col-md-12 style=font-size:12px;font-family:Actor;color:black>
                                     <b>SKA Metro Ville is the newest and luxurious residential group housing society
@@ -503,11 +503,21 @@
     </style>
 
 
-    <a class="float" onclick="Display_Popup()">
-        <i class="my-float">Enquire Now</i>
+    <a class="float" id="enquiry" onclick="Display_Popup()">
+        <i class="my-float" >Enquire Now</i>
     </a>
 
-
+<script>
+     setInterval(function() { 
+        document.getElementById("enquiry").classList.add("animate__animated")
+        document.getElementById("enquiry").classList.add("animate__heartBeat")
+        setTimeout(function(){
+            document.getElementById("enquiry").classList.remove("animate__animated")
+            document.getElementById("enquiry").classList.remove("animate__heartBeat")
+        },1000);
+   
+    }, 5000);
+</script>
 
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js></script>
     <script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js></script>
