@@ -248,6 +248,13 @@ function Confirm_OTP() {
                 time: time,
             });
             alert("Our expert will get in touch with you shortly!!")
+            document.getElementById("splash").classList.add("animate__zoomOutDown");
+            setTimeout(function () {
+                document.getElementById("main_content").classList.remove("main_imp");
+                document.getElementById("splash").style.display = "none";
+            }, 1000);
+            window.onscroll = function () { };
+            window.confirmation = false;
             document.getElementById("name").value = ''
             document.getElementById("email").value = ''
             document.getElementById("phone_number").value = ''
@@ -302,6 +309,13 @@ function New_Confirm_OTP() {
 
             });
             alert("Our expert will get in touch with you shortly!!")
+            document.getElementById("splash").classList.add("animate__zoomOutDown");
+            setTimeout(function () {
+                document.getElementById("main_content").classList.remove("main_imp");
+                document.getElementById("splash").style.display = "none";
+            }, 1000);
+            window.onscroll = function () { };
+            window.confirmation = false;
             document.getElementById("new_name").value = ''
             document.getElementById("new_email").value = ''
             document.getElementById("new_phone_number").value = ''
@@ -353,6 +367,13 @@ function Popup_Confirm_OTP() {
                 time: time,
             });
             alert("Our expert will get in touch with you shortly!!")
+            document.getElementById("splash").classList.add("animate__zoomOutDown");
+            setTimeout(function () {
+                document.getElementById("main_content").classList.remove("main_imp");
+                document.getElementById("splash").style.display = "none";
+            }, 1000);
+            window.onscroll = function () { };
+            window.confirmation = false;
             document.getElementById("popup_name").value = ''
             document.getElementById("popup_email").value = ''
             document.getElementById("popup_phone_number").value = ''
