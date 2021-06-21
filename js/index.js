@@ -13,16 +13,16 @@ function Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
-        New_Name=''
-        for (i = 0; i < Name.length; i++) {
-            if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
-                New_Name = New_Name + " "
-            }
-            else {
-                New_Name = New_Name + Name.charAt(i)
-            }
+    New_Name=''
+    for (i = 0; i < Name.length; i++) {
+        if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
+            New_Name = New_Name + " "
         }
+        else {
+            New_Name = New_Name + Name.charAt(i)
+        }
+    }
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
 
         // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
@@ -51,6 +51,16 @@ function Send_OTP() {
         }
         else {
             alert("ERROR OCCURED")
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10));
+            formMessage.set({
+                Name: New_Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
+        //     document.getElementById('confirm_otp').style.display = "block";
+        //     document.getElementById('block_chain').style.display = "none";
         }
 
     }
@@ -74,7 +84,7 @@ function New_Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -111,6 +121,14 @@ function New_Send_OTP() {
         }
         else {
             alert("ERROR OCCURED")
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Nae + "  " + Number.substring(Number.length - 10));
+            formMessage.set({
+                Name: New_Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
         }
 
     }
@@ -136,7 +154,7 @@ function Popup_Send_OTP() {
     var sec = today.getSeconds()
     today = dd + '/' + mm + '/' + yyyy;
     time = hour + ":" + min + ":" + sec
-    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
+    if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -173,6 +191,14 @@ function Popup_Send_OTP() {
         }
         else {
             alert("ERROR OCCURED")
+            let formMessage = firebase.database().ref("FORM DATA").child(New_Name + "  " + Number.substring(Number.length - 10));
+            formMessage.set({
+                Name: New_Name,
+                Email: Email,
+                Number: Number,
+                date: today,
+                time: time,
+            });
         }
 
     }
@@ -196,7 +222,7 @@ function Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -248,7 +274,7 @@ function New_Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -303,7 +329,7 @@ function Popup_Confirm_OTP() {
     var sec = today.getSeconds()
     time = hour + ":" + min + ":" + sec
 
-    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT" && Number.length==10) {
+    if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         New_Name=''
         for (i = 0; i < Name.length; i++) {
             if (Name.charAt(i) == '.'||Name.charAt(i) == '#'||Name.charAt(i) == '$'||Name.charAt(i) == '['||Name.charAt(i) == ']') {
@@ -366,7 +392,7 @@ function removed_done() {
     var Choice = document.getElementById('popup_type_flats').value
     var code_display = document.getElementById("popup_confirm_otp").style.display
     if (code_display == 'none') {
-        if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT" || Number.length==10) {
+        if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT") {
             var ref = confirm("Do you really want to exit the enquiry?")
             if (ref == true) {
                 document.getElementById("splash").classList.add("animate__zoomOutDown");
@@ -418,7 +444,7 @@ function Display_Popup() {
         var Choice = document.getElementById('popup_type_flats').value
         var code_display = document.getElementById("popup_confirm_otp").style.display
         if (code_display == 'none') {
-            if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT"|| Number.length==10) {
+            if (Name != '' || Email != '' || Number != '' || Choice != "CHOOSE YOUR REQUIREMENT") {
                 var ref = confirm("Do you really want to exit the enquiry?")
                 if (ref == true) {
                     document.getElementById("splash").classList.add("animate__zoomOutDown");
