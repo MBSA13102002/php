@@ -25,8 +25,9 @@ function Send_OTP() {
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
 
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
-        theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
+        // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
         result = xmlHttp.responseText;
@@ -65,7 +66,7 @@ function Send_OTP() {
 
     }
     else {
-        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
+        alert("First Fill All The Details.")
     }
 
 }
@@ -95,7 +96,8 @@ function New_Send_OTP() {
     }
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -133,7 +135,7 @@ function New_Send_OTP() {
 
     }
     else {
-        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
+        alert("First Fill All The Details.")
     }
 
 
@@ -165,7 +167,8 @@ function Popup_Send_OTP() {
     }
     if (Name != "" && Email != "" && Number != "" && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/" + Number.substring(Number.length - 10) + "/" + Math.floor(1000 + Math.random() * 9000).toString()
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -204,7 +207,7 @@ function Popup_Send_OTP() {
 
     }
     else {
-        alert("First Fill All The Details & Check the Length of Mobile Number(Only 10 Digits Allowed)!!!!")
+        alert("First Fill All The Details.")
     }
 
 
@@ -234,7 +237,8 @@ function Confirm_OTP() {
     }
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -266,7 +270,7 @@ function Confirm_OTP() {
         }
     }
     else {
-        alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
+        alert("Fill Out All The Details Of The Form & Verify Your Phone Number As Well.")
     }
 }
 function New_Confirm_OTP() {
@@ -293,7 +297,8 @@ function New_Confirm_OTP() {
     }
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -327,7 +332,7 @@ function New_Confirm_OTP() {
         }
     }
     else {
-        alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
+        alert("Fill Out All The Details Of The Form & Verify Your Phone Number As Well.")
     }
 }
 function Popup_Confirm_OTP() {
@@ -353,7 +358,8 @@ function Popup_Confirm_OTP() {
     }
     if (Name != '' && Email != '' && Number != '' && Verification_Code != '' && Choice != "CHOOSE YOUR REQUIREMENT") {
         var xmlHttp = new XMLHttpRequest();
-        theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        theUrl = "https://2factor.in/API/V1/" + "ace23105-cc2a-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
+        // theUrl = "https://2factor.in/API/V1/" + "16f346f4-cad2-11eb-8089-0200cd936042" + "/SMS/VERIFY/" + session_id + "/" + Verification_Code
         // theUrl="http://2factor.in/API/V1/293832-67745-11e5-88de-5600000c6b13/SMS/9911991199/4499"
         xmlHttp.open("GET", theUrl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -366,7 +372,7 @@ function Popup_Confirm_OTP() {
                 OTP: Verification_Code,
                 time: time,
             });
-            alert("Our expert will get in touch with you shortly!!")
+            alert("Our expert will get in touch with you shortly.")
             document.getElementById("splash").classList.add("animate__zoomOutDown");
             setTimeout(function () {
                 document.getElementById("main_content").classList.remove("main_imp");
@@ -386,7 +392,7 @@ function Popup_Confirm_OTP() {
         }
     }
     else {
-        alert("FILL OUT ALL THE DETAILS OF THE FORM AND VERIFY YOUR PHONE NUMBER AS WELL")
+        alert("Fill Out All The Details Of The Form & Verify Your Phone Number As Well.")
     }
 }
 function Splash() {
@@ -437,7 +443,7 @@ function removed_done() {
         } window.confirmation = false;
     }
     else {
-        alert("Verfication under process..Enter the OTP & Submit the form!!!")
+        alert("Verfication under process..Enter the OTP & Submit the form.")
     }
 }
 window.confirmation = false
@@ -493,7 +499,7 @@ function Display_Popup() {
             } window.confirmation = false;
         }
         else {
-            alert("Verfication under process..Enter the OTP & Submit the form!!!")
+            alert("Verfication under process..Enter the OTP & Submit the form.")
             var Name = document.getElementById("popup_name").value
             var Email = document.getElementById('popup_email').value
             var Number = document.getElementById('popup_phone_number').value
