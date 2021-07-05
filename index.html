@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href=images/logo_tab.ico type=image/x-icon>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel=stylesheet>
+<link href='https://fonts.googleapis.com/css?family=Yeseva One|Trispace|Alatsi|Actor' rel=stylesheet>
+<link rel=stylesheet href=css/bootstrap.min.css>
+<link rel=stylesheet href=css/style.css>
+<title>SKA Metro Ville - The Luxurious Residential Group</title>
+</head>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+<script type=text/javascript>$(document).ready(()=>{$(".dropdown-menu").val("0");});</script>
+<style>.btn-custom{background-color:#a98f6e;color:black}.my-font{font-family:Yeseva One}.my-font-new_1{font-size:18px;font-family:Yeseva One}.my-font-new{font-size:17px;font-family:Actor}.my_form{border:1px solid black;border-radius:20px}.my-border{border-radius:30px}.my-border-pic{border-radius:10px}.my-border-new{padding:10px;border:1px solid gray;border-radius:8px}.anchor{color:white}.anchor:hover{color:gray}</style>
+<body onload=Splash()>
+<nav class="navbar navbar-light bg-white">
+<div class=container-fluid>
+<a class=navbar-brand href=#>
+<img src=/images/logo.jpeg alt width=130 height=74 class="d-inline-block align-text-top">
+</a>
+</div>
+</nav>
+<center>
+<div class="animate__animated animate__backInLeft card container more_imp my-5" id=splash style=width:18rem;display:none>
+<center>
+<span type=button id=close style=position:relative;float:right onclick=removed_done()>x</span>
+<div class=row>
+<h3 class="col-md-12 my-2" style="font-family:Yeseva One">Get In Touch</h3>
+</div>
+<div id=popup_block_chain>
+<div class=row>
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=name id=popup_name placeholder=Name>
+</div>
+</div>
+<div class=row>
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=email id=popup_email placeholder="Email Address">
+</div>
+</div>
+<div class=row>
+<div class="dropdown col-md-12 my-1">
+<select class="btn btn-custom dropdown-toggle" id=popup_type_flats aria-labelledby=dropdownMenuButton1 style=color:black>
+<li>
+<option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+REQUIREMENT</option>
+</li>
+<li>
+<option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2 Bhk's
+starting @ 28.67
+lakhs</option>
+</li>
+<li>
+<option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3 Bhk's
+starting @ 36.16
+lakhs</option>
+</li>
+</select>
+</div>
+</div>
+<div class=row id=popup_send_otp>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=popup_phone_number placeholder="Phone Number">
+<button type=button class="btn btn-custom my-2 px-3" onclick=Popup_Send_OTP()>SUBMIT</button>
+</div>
+</div>
+</div>
+<div class=row id=popup_confirm_otp style=display:none>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=popup_verificationCode placeholder="Enter OTP">
+<button type=button class="btn btn-dark rounded-0 py-2 px-4" onclick=Popup_Confirm_OTP()>
+SUBMIT</button>
+</div>
+</div>
+<div class=row>
+<p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
+conditions</p>
+</div>
+</center>
+</div>
+</center>
+<div class=content id=main_content>
+<div class=container>
+<div class="row justify-content-center">
+<div class=col-md-10>
+<div class="row justify-content-center">
+<div class=col-md-6>
+<p><img src=images/flat.jpeg alt=Image class="img-fluid my-border"></p>
+</div>
+<div class="col-md-6 my-2">
+<div class="row mx-3">
+<h2 class="col-md-12 my-font">Welcome To SKA Metro Ville</h2>
+<p class=col-md-12 style=font-size:12px;font-family:Actor;color:black>
+<b>SKA Metro Ville is the newest and luxurious residential group housing society
+project in Greater Noida by SKA Group started in the year 2012. Total unit in
+the project will be 1062 comprising of 3/4/5 room apartments. There are four
+towers.The two towers having 536 flats have been launched which is likely to be
+completed by December,2021.
+<br><br>
+RERA REG NO. UPRERAPRJ16460.
+<br><br>
+This project has located amidst ETA-2 Greater Noida and walking distance to
+depot metro station on Aqua line. Greater Noida Industrial Development Authority
+has allotted the land for this project. The construction of this project is
+going on 5 acres of land in which the builder is offering 1062 units in the four
+high-rise towers named Orchid, Tulip, Zinnia, and Aster. The builder is offering
+2bhk, 3bhk, and 4bhk meticulously designed luxury homes in various sizes ranging
+from 920 square feet to 1670 square feet.</b>
+</p>
+</div>
+<div class=my_form>
+<div class="row mx-3">
+<h3 class="col-md-12 my-2" style="font-family:Yeseva One">Get In Touch</h3>
+</div>
+<div id=block_chain>
+<div class="row mx-3">
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=name id=name placeholder=Name>
+</div>
+</div>
+<div class="row mx-3">
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=email id=email placeholder="Email Address">
+</div>
+</div>
+<div class="row mx-3">
+<div class="dropdown col-md-12 my-1">
+<select class="btn btn-custom dropdown-toggle" id=type_flats aria-labelledby=dropdownMenuButton1 style=color:black>
+<li>
+<option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE
+YOUR
+REQUIREMENT</option>
+</li>
+<li>
+<option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+Bhk's
+starting @ 28.67
+lakhs</option>
+</li>
+<li>
+<option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+Bhk's
+starting @ 36.16
+lakhs</option>
+</li>
+</select>
+</div>
+</div>
+<div class="row mx-3" id=send_otp>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=phone_number placeholder="Phone Number">
+<button type=button class="btn btn-custom my-2 px-3" onclick=Send_OTP()>SUBMIT</button>
+</div>
+</div>
+</div>
+<div class="row mx-3" id=confirm_otp style=display:none>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=verificationCode placeholder="Enter OTP">
+<button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=Confirm_OTP()>
+SUBMIT</button>
+</div>
+</div>
+<div class="row mx-3">
+<p class=col-md-12> By submitting this form, you agree to the privacy policy & terms
+and
+conditions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class=featurette-divider>
+<div class=container>
+<div class="row featurette">
+<div class=col-md-7>
+<h2 class="featurette-heading my-font">SKA Metro Ville <span class=text-muted>-An Ideal Destination To Live In</span></h2>
+<figure class=figure>
+<img src=/images/exterior/exterior_2.jpeg class="figure-img img-fluid rounded" alt=...>
+<figcaption class=figure-caption>Great facilities Available Out There.<b>ENQUIRE NOW.</b>
+</figcaption>
+</figure>
+<p class="lead my-font">Long Term Investment With High ROI.</p>
+</div>
+<div class=col-md-5>
+<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width=500 height=500 src=/images/exterior/exterior_1.jpeg>
+</div>
+</div>
+<hr class=featurette-divider>
+<div class="row justify-content-center">
+<div class="col-md-6 my-1">
+<div class="row justify-content-center mx-3">
+<h2 class='text-center my-font my-border-new'>Apartment Outlook <span class=text-muted>-Inspiration Interiors</span></h2>
+<p class="lead my-font-new">
+From traditional decor to modern, and neutral interiors to bright and happening ones, SKA Metro Ville apartments are adaptive to best looks.
+</p>
+</div>
+<div class="row justify-content-center mx-3">
+<img src=/images/interior/interior_3.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+<img src=/images/interior/interior_4.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+<img src=/images/interior/interior_5.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+<img src=/images/interior/interior_6.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+<img src=/images/interior/interior_7.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+</div>
+</div>
+<div class="col-md-6 my-1">
+<div class="row justify-content-center mx-3">
+<h2 class='text-center my-font my-border-new'>Kitchen Interiors</h2>
+<p class="lead my-font-new">
+Kitchen designs has the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space.
+</p>
+</div>
+<div class="row justify-content-center mx-3">
+<img src=/images/interior/interior_1.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+<img src=/images/interior/interior_2.jpeg class="img-fluid m-1 my-border-pic" alt=... width=400 height=400>
+</div>
+<div class="row justify-content-center mx-3">
+<h2 class='text-center my-font my-border-new my-4'>Location of SKA Metro Ville</h2>
+<br>
+<p class="lead my-font-new"><b>Address:</b> 1B Plot No. GH,3,Beta Sector 2 Rd, Greater, Noida, Uttar Pradesh</p>
+<img src=/images/maps/map_1.jpeg class="img-fluid m-1 my-border-pic" alt=... width=500 height=400>
+</div>
+</div>
+</div>
+</div>
+<div class="conatiner my-4">
+<h2 class='text-center my-font'>FACILITIES</h2>
+<div class="row mx-5 justify-content-center">
+<div class=col>
+<img src=/images/facilities/car.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Car Parking
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/cart.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Shopping
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/club.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Club House
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/fire.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Fire Systems
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/lift.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Lift(s)
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/play.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Play Area
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/swimming.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+Swimming Pool
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/thunder.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+24/7 Power
+</p>
+</div>
+<div class=col>
+<img src=/images/facilities/water.jpg class="img-thumbnail m-1 my-border-pic" alt=... width=100 height=100>
+<p class="lead mx-3 my-font-new_1">
+24/7 Water
+</p>
+</div>
+</div>
+</div>
+<footer id=footer class="section footer" style=color:aliceblue>
+<div class="card text-center bg-dark">
+<div class=card-body style=color:antiquewhite>
+<a href=tel:9560252011><button type=button class="btn btn-success">Call Now
+!</button></a>
+<div class="container my-2 my-border-new">
+<div class="row mx-3">
+<h3 class="col-md-12 text-center my-2" style="font-family:Yeseva One;color:white">Contact Us
+</h3>
+</div>
+<div id=new_block_chain>
+<div class="row mx-3">
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=name id=new_name placeholder=Name>
+</div>
+</div>
+<div class="row mx-3">
+<div class="col-md-12 form-group">
+<input type=text class=form-control name=email id=new_email placeholder="Email Address">
+</div>
+</div>
+<div class="row mx-3">
+<div class="dropdown col-md-12 my-1">
+<select class="btn btn-custom dropdown-toggle" id=new_type_flats aria-labelledby=dropdownMenuButton1 style=color:black>
+<li>
+<option class=dropdown-item value="CHOOSE YOUR REQUIREMENT">CHOOSE YOUR
+REQUIREMENT</option>
+</li>
+<li>
+<option class=dropdown-item value="2 Bhk's starting @ 28.67 lakhs">2
+Bhk's
+starting @ 28.67
+lakhs</option>
+</li>
+<li>
+<option class=dropdown-item value="3 Bhk's starting @ 36.16 lakhs">3
+Bhk's
+starting @ 36.16
+lakhs</option>
+</li>
+</select>
+</div>
+</div>
+<div class="row mx-3" id=new_send_otp>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=new_phone_number placeholder="Phone Number">
+<button type=button class="btn btn-custom my-2 px-3" onclick=New_Send_OTP()>SUBMIT</button>
+</div>
+</div>
+</div>
+<div class="row mx-3" id=new_confirm_otp style=display:none>
+<div class="col-md-12 form-group my-1">
+<input type=text class=form-control name=number id=new_verificationCode placeholder="Enter OTP">
+<button type=button class="btn btn-dark rounded-0 my-2 px-4" onclick=New_Confirm_OTP()>
+SUBMIT</button>
+</div>
+</div>
+<div class="row mx-3">
+<p class=col-md-12> By submitting this form, you agree to the privacy policy & terms and
+conditions</p>
+</div>
+<p><a href=T&C class=anchor>Terms & Conditions</a> <a href="privacy policy" class=anchor>Privacy
+Policy</a> </p>
+<h5 class=card-title style=color:aliceblue;font-size:15px>Copyright <i>&#xa9</i> 2021
+Gettingyourdeal
+.All rights
+reserved
+</h5>
+</div>
+</div>
+</footer>
+</div>
+<style>.float{position:fixed;width:140px;height:50px;bottom:40px;right:40px;background-color:red;color:black;text-align:center;font-size:20px;font-weight:10;box-shadow:2px 2px 3px #999;border-radius:10px;z-index:100}.my-float{color:white;margin-top:16px}</style>
+<a class=float id=enquiry onclick=Display_Popup()>
+<i class=my-float>Enquire Now</i>
+</a>
+<script>setInterval(function(){document.getElementById("enquiry").classList.add("animate__animated")
+document.getElementById("enquiry").classList.add("animate__heartBeat")
+setTimeout(function(){document.getElementById("enquiry").classList.remove("animate__animated")
+document.getElementById("enquiry").classList.remove("animate__heartBeat")},1000);},5000);</script>
+<script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js></script>
+<script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js></script>
+<script src=https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js></script>
+<script>var firebaseConfig={apiKey:"AIzaSyDo2UWpbmloaJap1aFcU5JqnWwu1oqff4U",authDomain:"ska-metroville.firebaseapp.com",projectId:"ska-metroville",storageBucket:"ska-metroville.appspot.com",messagingSenderId:"773487365179",appId:"1:773487365179:web:0d2b89776619b28330a01e",measurementId:"G-6511CWCLP3"};firebase.initializeApp(firebaseConfig);firebase.analytics();</script>
+<script src=js/index.js></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js integrity=sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 crossorigin=anonymous></script>
+</body>
+</html>
