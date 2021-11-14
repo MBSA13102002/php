@@ -21,7 +21,7 @@ def begin():
     key = db.generate_key()
     _key = db.generate_key()
     db.child("Data").child(key).set({
-        'count':1
+        'count':0
     })
     return redirect(url_for('start',app_key = key,inner_key = _key))
 @app.route('/<string:app_key>/<string:inner_key>/',methods=['GET','POST'])
