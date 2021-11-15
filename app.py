@@ -58,7 +58,8 @@ def index():
 @app.route('/dashboard')
 def dashboard():
     if g.user:
-        return render_template("dashboard_temp.html")
+        friends_list = db.child("Users").child(session['user']).child("friends").get()
+        return render_template("dashboard.html",friends_list =friends_list,handle_catch = handle_catch )
     return redirect(url_for('index'))
 
 @app.route("/drop",methods=['GET','POST'])
@@ -77,8 +78,11 @@ def signup():
         try:
             _user_ = auth.create_user_with_email_and_password(username ,password)
             auth.send_email_verification(_user_['idToken'])
+            db.child("User_Emails").child(username.split("@")[0]).set({
+                "UID":_user_['localId']
+            })
             db.child("Users").child(_user_['localId']).set({
-                "name":name
+                "name":name,    
             })
             return render_template("success.html")
         except Exception as e:
@@ -94,6 +98,44 @@ def passchange():
         return render_template("passwordchange.html",val = "true")
     return render_template("passwordchange.html",val = "false")
 
+@app.route('/addfriend',methods = ['GET','POST'])
+def addfriend():
+    if request.method=='POST':
+        femail = request.form.get('friend_add_email').split("@")[0]
+        all_emails = dict(db.child("User_Emails").get().val())
+        all_emails_list  = list(all_emails.keys())
+        try:
+            user_friend_list = list(dict(db.child("Users").child(session['user']).child("friends").get().val()).keys())
+            if femail in all_emails_list and femail not in user_friend_list:
+                friends_name = db.child('Users').child(all_emails[femail]['UID']).child("name").get().val()
+                db.child("Users").child(session['user']).child("friends").child(all_emails[femail]['UID']).update({
+                    'name':friends_name
+                })
+                user_name = db.child('Users').child(session['user']).child("name").get().val()
+                db.child("Users").child(all_emails[femail]['UID']).child("friends").child(session['user']).update({
+                'name':user_name
+                })
+        except:
+
+            if femail in all_emails_list:
+                friends_name = db.child('Users').child(all_emails[femail]['UID']).child("name").get().val()
+                db.child("Users").child(session['user']).child("friends").child(all_emails[femail]['UID']).update({
+                    'name':friends_name
+                })
+                user_name = db.child('Users').child(session['user']).child("name").get().val()
+                db.child("Users").child(all_emails[femail]['UID']).child("friends").child(session['user']).update({
+                'name':user_name
+                })
+            
+        return redirect(url_for('dashboard')) 
+    return redirect(url_for('dashboard')) 
+
+@app.route("/<string:friend_uid>/",methods = ['GET','POST'])
+def chat(friend_uid):
+    if request.method == 'POST':
+        user_name = db.child('Users').child(session['user']).child("name").get().val()
+        friends_name = db.child('Users').child(friend_uid).child("name").get().val()
+        return render_template("chat.html",user_uid = session['user'],friend_uid = friend_uid,user_name = user_name,friend_name =friends_name )
 @app.before_request
 def before_request():
     g.user = None
